@@ -2,10 +2,11 @@
 {
     public interface IEntity
     {
+        string Name { get; set; }
+        
         void Attack(IEntity target);
         void Move();
-        void Fly();
-        string Name { get; set; }
+        void Dodge();
+        void CounterAttack(IEntity target);
     }
-
 }

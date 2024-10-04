@@ -2,10 +2,11 @@
 
 namespace W5_assignment_template.Models
 {
-    public class Ghost : IEntity
+    public class Ghost : IEntity, IDisappearable
     {
         public string Name { get; set; }
 
+        //IEntity Action methods
         public void Attack(IEntity target)
         {
             Console.WriteLine($"{Name} attacks {target.Name} with a chilling touch.");
@@ -15,10 +16,18 @@ namespace W5_assignment_template.Models
         {
             Console.WriteLine($"{Name} floats silently.");
         }
-
-        public void Fly()
+        public void Dodge()
         {
-            Console.WriteLine($"{Name} flies rapidly through the air.");
+            Console.WriteLine($"{Name} dodges to avoid the attack.");
+        }
+        public void CounterAttack(IEntity target)
+        {
+            Console.WriteLine($"{Name} counter attacks {target.Name} with a chilling touch.");
+        }
+        //Custom action methods
+        public void Disappear()
+        {
+            Console.WriteLine($"{Name} disappears out of sight.");
         }
     }
 }
